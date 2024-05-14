@@ -1,0 +1,67 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-image: url("https://images.unsplash.com/photo-1690055899078-63be27a01cdc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80");
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* căn chỉnh vị trí bức ảnh */
+  /* background-position-y: -60px; */
+}
+#wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#form {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px 0;
+  background-color: rgba(0, 157, 255, 0.32);
+  flex-grow: 1;
+  padding: 30px 70px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.311);
+}
+
+.form-heading {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form_group {
+  border-bottom: 1px solid white;
+  padding-left: 3px;
+  padding-bottom: 2px;
+  display: flex;
+  gap: 0 10px;
+  position: relative;
+}
+.fa-solid {
+  font-size: 13px;
+}
+.form-input {
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  color: white;
+  flex: 1;
+}
+.form-input::placeholder {
+  color: black;
+}
+.form-submit {
+  width: 100%;
+  background-color: white;
+  height: 30px;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+  text-transform: uppercase;
+}
+.form-submit:hover {
+  background-color: rgba(255, 0, 0, 0.507);
+}

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Embed font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icon  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <!-- reset css -->
+    <link rel="stylesheet" href="./asstets/css/reset.css" />
+
+    <!-- styles css -->
+    <link rel="stylesheet" href="./asstets/css/style.css" />
+    <link rel="stylesheet" href="./asstets/css/taskpage.css" />
+    <title>All task</title>
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="container">
+        <nav class="navbar">
+          <!-- menu button -->
+          <div class="navbar__icons">
+            <div class="navbar__icon"></div>
+          </div>
+          <!-- search -->
+          <div class="navbar__search">
+            <input type="text" placeholder="Search" />
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+          <!-- Right icon -->
+          <div class="navbar__right">
+            <i class="fa-regular fa-bell"></i>
+            <i id="moon" class="fa-solid fa-moon"></i>
+            <i class="fa-solid fa-user"></i>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <!-- links -->
+      <ul class="navbar__links">
+        <li class="navbar__link">
+          <i class="fas fa-tachometer-alt"></i>
+          <a href="./index.html">Home</a>
+        </li>
+        <li class="navbar__link">
+          <i class="fa-solid fa-list-check"></i>
+          <a href="">All Tasks</a>
+        </li>
+        <li class="navbar__link">
+          <i class="fa-solid fa-circle-check"></i>
+          <a href="./completed_task.html">Completed Tasks</a>
+        </li>
+        <li class="navbar__link">
+          <i class="fa-solid fa-hourglass-half"></i>
+          <a href="./running_task.html">Running Tasks</a>
+        </li>
+        <li class="navbar__link">
+          <i class="fa-solid fa-circle-plus"></i>
+          <a href="./create_task.html">Add a Task</a>
+        </li>
+      </ul>
+      <div class="running-task-block">
+        <div class="running-task-heading">All Task</div>
+        <div class="running-task-body">
+          <div class="row">
+            <div class="group-btn">
+              <button class="btn btn-category">
+                <span>By category</span>
+                <img
+                  src="./asstets/icons/filter-icon.svg"
+                  alt=""
+                  style="width: 11px; height: 14px"
+                />
+              </button>
+              <button class="btn btn-priority">
+                <span>By priority</span>
+                <img
+                  src="./asstets/icons/filter-icon.svg"
+                  alt=""
+                  style="width: 11px; height: 14px"
+                />
+              </button>
+              <button class="btn btn-status">
+                <span>By status</span>
+                <img
+                  src="./asstets/icons/filter-icon.svg"
+                  alt=""
+                  style="width: 11px; height: 14px"
+                />
+              </button>
+            </div>
+            <div class="btn-search">
+              <input type="text" class="search" placeholder="Search by name" />
+              <img
+                src="./asstets/icons/search-icon.svg"
+                alt=""
+                class="search-icon"
+                style="width: 18px; height: 18px"
+              />
+            </div>
+          </div>
+
+          <!-- task list -->
+          <div class="task-list">
+            <div class="task-item">
+              <div class="row">
+                <h3 class="task-name">Learn Javascipt</h3>
+                <img src="./asstets/icons/info-icon.svg" alt="" class="icon" />
+              </div>
+              <div class="row">
+                <p class="task-date">Start date: <span>07-07-2023</span></p>
+                <img src="./asstets/icons/edit-icon.svg" alt="" class="icon" />
+              </div>
+              <div class="row">
+                <div class="task-completed">
+                  <img
+                    src="./asstets/icons/mark-icon.svg"
+                    alt=""
+                    class="icon"
+                  />
+                  <p class="task-desc">Mark as completed</p>
+                </div>
+                <img
+                  src="./asstets/icons/delete-icon.svg"
+                  alt=""
+                  class="icon"
+                />
+              </div>
+            </div>
+
+            <div class="task-item">
+              <div class="row">
+                <h3 class="task-name">Learn Javascipt</h3>
+                <img src="./asstets/icons/info-icon.svg" alt="" class="icon" />
+              </div>
+              <div class="row">
+                <p class="task-date">Start date: <span>07-07-2023</span></p>
+                <img src="./asstets/icons/edit-icon.svg" alt="" class="icon" />
+              </div>
+              <div class="row">
+                <div class="task-completed">
+                  <img
+                    src="./asstets/icons/mark-icon.svg"
+                    alt=""
+                    class="icon"
+                  />
+                  <p class="task-desc">Mark as completed</p>
+                </div>
+                <img
+                  src="./asstets/icons/delete-icon.svg"
+                  alt=""
+                  class="icon"
+                />
+              </div>
+            </div>
+
+            <div class="task-item">
+              <div class="row">
+                <h3 class="task-name">Learn Javascipt</h3>
+                <img src="./asstets/icons/info-icon.svg" alt="" class="icon" />
+              </div>
+              <div class="row">
+                <p class="task-date">Start date: <span>07-07-2023</span></p>
+                <img src="./asstets/icons/edit-icon.svg" alt="" class="icon" />
+              </div>
+              <div class="row">
+                <div class="task-completed">
+                  <img
+                    src="./asstets/icons/mark-icon.svg"
+                    alt=""
+                    class="icon"
+                  />
+                  <p class="task-desc">Mark as completed</p>
+                </div>
+                <img
+                  src="./asstets/icons/delete-icon.svg"
+                  alt=""
+                  class="icon"
+                />
+              </div>
+            </div>
+
+            <div class="task-item">
+              <div class="row">
+                <h3 class="task-name">Learn Javascipt</h3>
+                <img src="./asstets/icons/info-icon.svg" alt="" class="icon" />
+              </div>
+              <div class="row">
+                <p class="task-date">Start date: <span>07-07-2023</span></p>
+                <img src="./asstets/icons/edit-icon.svg" alt="" class="icon" />
+              </div>
+              <div class="row">
+                <div class="task-completed">
+                  <img
+                    src="./asstets/icons/mark-icon.svg"
+                    alt=""
+                    class="icon"
+                  />
+                  <p class="task-desc">Mark as completed</p>
+                </div>
+                <img
+                  src="./asstets/icons/delete-icon.svg"
+                  alt=""
+                  class="icon"
+                />
+              </div>
+            </div>
+
+            <div class="task-item">
+              <div class="row">
+                <h3 class="task-name">Learn Javascipt</h3>
+                <img src="./asstets/icons/info-icon.svg" alt="" class="icon" />
+              </div>
+              <div class="row">
+                <p class="task-date">Start date: <span>07-07-2023</span></p>
+                <img src="./asstets/icons/edit-icon.svg" alt="" class="icon" />
+              </div>
+              <div class="row">
+                <div class="task-completed">
+                  <img
+                    src="./asstets/icons/mark-icon.svg"
+                    alt=""
+                    class="icon"
+                  />
+                  <p class="task-desc">Mark as completed</p>
+                </div>
+                <img
+                  src="./asstets/icons/delete-icon.svg"
+                  alt=""
+                  class="icon"
+                />
+              </div>
+            </div>
+
+            <div class="task-item">
+              <div class="row">
+                <h3 class="task-name">Learn Javascipt</h3>
+                <img src="./asstets/icons/info-icon.svg" alt="" class="icon" />
+              </div>
+              <div class="row">
+                <p class="task-date">Start date: <span>07-07-2023</span></p>
+                <img src="./asstets/icons/edit-icon.svg" alt="" class="icon" />
+              </div>
+              <div class="row">
+                <div class="task-completed">
+                  <img
+                    src="./asstets/icons/mark-icon.svg"
+                    alt=""
+                    class="icon"
+                  />
+                  <p class="task-desc">Mark as completed</p>
+                </div>
+                <img
+                  src="./asstets/icons/delete-icon.svg"
+                  alt=""
+                  class="icon"
+                />
+              </div>
+            </div>
+
+            <div class="task-item">
+              <div class="row">
+                <h3 class="task-name">Learn Javascipt</h3>
+                <img src="./asstets/icons/info-icon.svg" alt="" class="icon" />
+              </div>
+              <div class="row">
+                <p class="task-date">Start date: <span>07-07-2023</span></p>
+                <img src="./asstets/icons/edit-icon.svg" alt="" class="icon" />
+              </div>
+              <div class="row">
+                <div class="task-completed">
+                  <img
+                    src="./asstets/icons/mark-icon.svg"
+                    alt=""
+                    class="icon"
+                  />
+                  <p class="task-desc">Mark as completed</p>
+                </div>
+                <img
+                  src="./asstets/icons/delete-icon.svg"
+                  alt=""
+                  class="icon"
+                />
+              </div>
+            </div>
+
+            <div class="task-item">
+              <div class="row">
+                <h3 class="task-name">Learn Javascipt</h3>
+                <img src="./asstets/icons/info-icon.svg" alt="" class="icon" />
+              </div>
+              <div class="row">
+                <p class="task-date">Start date: <span>07-07-2023</span></p>
+                <img src="./asstets/icons/edit-icon.svg" alt="" class="icon" />
+              </div>
+              <div class="row">
+                <div class="task-completed">
+                  <img
+                    src="./asstets/icons/mark-icon.svg"
+                    alt=""
+                    class="icon"
+                  />
+                  <p class="task-desc">Mark as completed</p>
+                </div>
+                <img
+                  src="./asstets/icons/delete-icon.svg"
+                  alt=""
+                  class="icon"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Load more -->
+          <button class="btn-load">Load more</button>
+        </div>
+      </div>
+    </main>
+
+    <div class="bot-chat">
+      <img src="./asstets/icons/robot.svg" alt="" class="robot-icon" />
+    </div>
+    <script src="./asstets/js/main.js"></script>
+  </body>
+</html>
