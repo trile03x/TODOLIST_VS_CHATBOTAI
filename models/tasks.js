@@ -19,6 +19,7 @@ module.exports = (sequelize, DataTypes) => {
     taskType: DataTypes.STRING,
     endDay: DataTypes.DATE,
     startDay: DataTypes.DATE,
+    status:DataTypes.BOOLEAN,
     descTask: DataTypes.STRING
   }, {
     sequelize,
