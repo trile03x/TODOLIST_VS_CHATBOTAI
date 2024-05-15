@@ -1,5 +1,6 @@
 const express = require("express");
 const path = require("path");
+const cors = require('cors');
 const app = express();
 const { sequelize } = require("./models");
 const { rootRouter } = require("./routers/index")
@@ -9,7 +10,7 @@ app.use(express.json());
 const publicPath = path.join(__dirname, "./public");
 app.use(express.static(publicPath));
 // use router
-app.use("/api/v1", rootRouter);
+app.use("/api/v1", cors(),rootRouter);
 app.listen(3036, async () => {
     try {
         await sequelize.authenticate();

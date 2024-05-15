@@ -1,9 +1,9 @@
 const { where, Op } = require("sequelize");
 const { Tasks } = require("../models/index")
 const createTasks = async (req, res) => {
-    const { taskTitle, taskLevel, taskType, endDay, startDay, descTask } = req.body;
+    const { taskTitle, taskLevel, taskType, endDay, startDay, descTask, status } = req.body;
     try {
-        const newTask = await Tasks.create({ taskTitle, taskLevel, taskType, endDay, startDay, descTask });
+        const newTask = await Tasks.create({ taskTitle, taskLevel, taskType, endDay, startDay, descTask, status });
         res.send(newTask);
     } catch (error) {
         res.send(error)

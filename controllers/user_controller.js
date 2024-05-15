@@ -25,11 +25,11 @@ const login = async (req, res) => {
             email,
         }
     })
-    if (user) {
+    if (userLogin) {
         const checkPass = bcryptjs.compareSync(pass, userLogin.pass);
         if (checkPass) {
             const token = jwt.sign({ email: userLogin.email, pass: userLogin.pass }, "usersTokenLogin", { expiresIn: 60 * 60 });
-            res.send({
+            res.status(200).send({
                 mess: "Login success",
                 token
             });
