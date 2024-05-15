@@ -42,7 +42,8 @@
   margin-bottom: 10px;
 }
 
-.create-task__input input {
+.create-task__input input,
+.create-task__input select {
   width: calc(100% - 20px);
   padding: 10px;
   font-size: 1rem;
