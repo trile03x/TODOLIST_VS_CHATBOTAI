@@ -7,9 +7,13 @@ body {
   background-image: url("https://images.unsplash.com/photo-1690055899078-63be27a01cdc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80");
   background-repeat: no-repeat;
   background-size: cover;
-  /* căn chỉnh vị trí bức ảnh */
-  /* background-position-y: -60px; */
+  font-family: "Inter", sans-serif;
 }
+
+a {
+  text-decoration: none;
+}
+
 #wrapper {
   min-height: 100vh;
   display: flex;
@@ -62,6 +66,22 @@ body {
   transition: all 0.25s ease-in-out;
   text-transform: uppercase;
 }
-.form-submit:hover {
+
+.form-submit:hover,
+.sign-up:hover {
   background-color: rgba(255, 0, 0, 0.507);
+}
+
+.sign-up {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border: 2px solid #000;
+  height: 30px;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+  text-transform: uppercase;
+  color: black;
 }

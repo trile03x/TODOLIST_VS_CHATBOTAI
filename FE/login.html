@@ -1,42 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="./asstets/css/login.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login</title>
-  <link rel="stylesheet" href="./asstets/css/login.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
-  <div id="wrapper">
-    <form action="" id="form">
-      <h1 class="form-heading">Đăng nhập</h1>
-      <!-- tên đăng nhập -->
-      <div class="form_group">
-        <!-- <label for="useername">Tên đăng nhập</label>  -->
-        <i class="fa-solid fa-user"></i>
-        <input type="text" name="username" id="username-input" required placeholder="Tên đăng nhập"
-          class="form-input" />
-      </div>
-      <br />
-      <!-- mật khẩu -->
-      <div class="form_group">
-        <!-- <label for="useername">Tên đăng nhập</label>  -->
-        <i class="fa-solid fa-lock"></i>
-        <input type="password" name="password" id="password-input" required placeholder="Mật khẩu" class="form-input" />
-      </div>
-      <br />
-      <!-- submit -->
-      <input type="submit" value="Đăng nhập" class="form-submit" />
-    </form>
-  </div>
-  <script src="./asstets/js/main.js"></script>  
-  <script src="./axios/login.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-</body>
-
+  <body>
+    <div id="wrapper">
+      <form action="" id="form">
+        <h1 class="form-heading">Đăng nhập</h1>
+        <!-- tên đăng nhập -->
+        <div class="form_group">
+          <!-- <label for="useername">Tên đăng nhập</label>  -->
+          <i class="fa-solid fa-user"></i>
+          <input
+            type="text"
+            name="username"
+            id="username-input"
+            required
+            placeholder="Tên đăng nhập"
+            class="form-input"
+          />
+        </div>
+        <br />
+        <!-- mật khẩu -->
+        <div class="form_group">
+          <!-- <label for="useername">Tên đăng nhập</label>  -->
+          <i class="fa-solid fa-lock"></i>
+          <input
+            type="password"
+            name="password"
+            id="password-input"
+            required
+            placeholder="Mật khẩu"
+            class="form-input"
+          />
+        </div>
+        <br />
+        <!-- submit -->
+        <input type="submit" value="Đăng nhập" class="form-submit" />
+        <a href="./sign-up.html" class="sign-up">Đăng kí</a>
+      </form>
+    </div>
+    <script src="./asstets/js/main.js"></script>
+    <script src="./axios/login.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </body>
 </html>

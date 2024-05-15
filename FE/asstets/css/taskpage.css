@@ -129,6 +129,7 @@
 .running-task-block .icon {
   width: 20px;
   height: 20px;
+  cursor: pointer;
 }
 
 /* Load more */
