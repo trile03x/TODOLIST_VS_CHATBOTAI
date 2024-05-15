@@ -4,7 +4,7 @@ const createTasks = async (req, res) => {
     const { taskTitle, taskLevel, taskType, endDay, startDay, descTask, status } = req.body;
     try {
         const newTask = await Tasks.create({ taskTitle, taskLevel, taskType, endDay, startDay, descTask, status });
-        res.send(newTask);
+        res.status(200).send(newTask);
     } catch (error) {
         res.send(error)
     }

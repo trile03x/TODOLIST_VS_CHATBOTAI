@@ -76,7 +76,7 @@
       <!-- create task -->
       <div class="create-task">
         <h1 class="task-title">Create your task</h1>
-        <form action="" class="create-task_block">
+        <form action="" class="create-task_block" id="form-create-task">
           <div class="create-task__input">
             <label for="task-name">Task Name</label>
             <input
@@ -99,12 +99,11 @@
           </div>
           <div class="create-task__input">
             <label for="category">Category</label>
-            <input type="text" id="priority" />
+            <input type="text" id="category" />
           </div>
           <div class="create-task__input">
-            <label for="task-desc">Task Description</label>
+            <label>Task Description</label>
             <textarea
-              name="task-desc"
               id="task-desc"
               cols="30"
               rows="10"
@@ -116,5 +115,7 @@
       </div>
     </main>
     <script src="./asstets/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./axios/create_task.js"></script>
   </body>
 </html>
