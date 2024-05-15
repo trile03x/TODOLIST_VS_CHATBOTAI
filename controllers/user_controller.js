@@ -11,7 +11,7 @@ const register = async (req, res) => {
         // String encrypt salt + pass
         const hashPass = bcryptjs.hashSync(pass, salt);
         const newUser = await user.create({ name, email, pass: hashPass });
-        res.send(newUser);
+        res.status(200).send(newUser);
 
     } catch (error) {
         res.send(error)
