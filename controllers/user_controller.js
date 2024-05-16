@@ -35,7 +35,7 @@ const login = async (req, res) => {
             });
         }
         else {
-            res.send("Login fail");
+            res.status(404).send("Login fail");
         }
     }
     else {
