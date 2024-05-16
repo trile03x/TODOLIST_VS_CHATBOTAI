@@ -22,6 +22,6 @@ document.getElementById('form').addEventListener('submit', async function (event
       alert('Login failed: An unexpected error occurred.');
     }
   }
-  // console.log(username);
-  // console.log(password);
+  console.log(username);
+  console.log(password);
 });
