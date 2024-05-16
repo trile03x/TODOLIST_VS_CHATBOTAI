@@ -78,38 +78,31 @@
         <div class="running-task-body">
           <div class="row">
             <div class="group-btn">
-              <button class="btn btn-category">
-                <span>By category</span>
-                <img
-                  src="./asstets/icons/filter-icon.svg"
-                  alt=""
-                  style="width: 11px; height: 14px"
-                />
-              </button>
-              <button class="btn btn-priority">
-                <span>By priority</span>
-                <img
-                  src="./asstets/icons/filter-icon.svg"
-                  alt=""
-                  style="width: 11px; height: 14px"
-                />
-              </button>
-              <button class="btn btn-status">
-                <span>By status</span>
-                <img
-                  src="./asstets/icons/filter-icon.svg"
-                  alt=""
-                  style="width: 11px; height: 14px"
-                />
-              </button>
+              <select class="btn btn-category">
+                <option value="" selected>By category</option>
+                <option value="1">Work</option>
+                <option value="2">Study</option>
+                <option value="3">Housework</option>
+              </select>
+
+              <select class="btn btn-priority">
+                <option value="" selected>By priority</option>
+                <option value="1">Low</option>
+                <option value="2">Medium</option>
+                <option value="3">High</option>
+              </select>
+
+              <select class="btn btn-status">
+                <option value="" selected>By status</option>
+                <option value="1">Running</option>
+                <option value="2">Completed</option>
+              </select>
             </div>
             <div class="btn-search">
-              <input type="text" class="search" placeholder="Search by name" />
               <img
                 src="./asstets/icons/search-icon.svg"
                 alt=""
                 class="search-icon"
-                style="width: 18px; height: 18px"
               />
             </div>
           </div>

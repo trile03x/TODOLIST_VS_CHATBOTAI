@@ -23,7 +23,7 @@
   color: #fff;
   font-size: 2.5rem;
   font-weight: 700;
-  transform: translateX(60px);
+  transform: translateX(72px);
 }
 
 .running-task-block .running-task-body {
@@ -40,7 +40,8 @@
 
 .running-task-block .group-btn {
   display: flex;
-  gap: 20px;
+  gap: 50px;
+  margin-left: 86px;
 }
 
 .running-task-block .btn {
@@ -57,7 +58,7 @@
 }
 
 .running-task-block .btn-search {
-  position: relative;
+  cursor: pointer;
 }
 
 .running-task-block .search {
@@ -72,10 +73,9 @@
 }
 
 .running-task-block .search-icon {
-  position: absolute;
-  top: 50%;
-  right: 12px;
-  transform: translateY(-50%);
+  display: block;
+  width: 30px;
+  height: 30px;
 }
 
 /* ====== task list ======*/
