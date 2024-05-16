@@ -337,3 +337,13 @@ img {
   right: 20px;
   cursor: pointer;
 }
+/* color level */
+.task-group .task-item.level1{
+  background-color: #83c5be;
+}
+.task-group .task-item.level2{
+  background-color: #22dbdb;
+}
+.task-group .task-item.level3{
+  background-color: #a4d60f;
+}

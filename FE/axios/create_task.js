@@ -20,7 +20,7 @@ document.getElementById('form-create-task').addEventListener('submit', async fun
         ('0' + startDay.getMinutes()).slice(-2) + ':' +
         ('0' + startDay.getSeconds()).slice(-2);
     try {
-        const res = await axios.post('http://localhost:3036/api/v1/task/', {
+        const res = await axios.post('http://localhost:3036/api/v1/task/create', {
             taskTitle: taskName,
             taskLevel: priority,
             taskType: category,

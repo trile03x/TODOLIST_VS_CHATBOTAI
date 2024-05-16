@@ -45,15 +45,18 @@ const showDetailTasks = async (req, res) => {
         res.send(error);
     }
 };
-const showDetailTasksTest = async (req, res) => {
+const showDetailTaskByQuery = async (req, res) => {
     try {
-        const { taskType,taskLevel,status } = req.params;
-        const task = await Tasks.findOne({
+        const { taskLevel,taskType,status } = req.body;
+        console.log(taskLevel, taskType,status);
+        const tasks = await Tasks.findAll({
             where: {
-                id,
+                taskType,
+                taskLevel,
+                status,
             }
         });
-        res.send(task);
+        res.send(tasks);
     }
     catch (error) {
         res.send(error);
@@ -92,5 +95,6 @@ module.exports = {
     showTasks,
     showDetailTasks,
     updateTasks,
-    deleteTasks
+    deleteTasks,
+    showDetailTaskByQuery
 }
