@@ -45,6 +45,20 @@ const showDetailTasks = async (req, res) => {
         res.send(error);
     }
 };
+const showDetailTasksTest = async (req, res) => {
+    try {
+        const { taskType,taskLevel,status } = req.params;
+        const task = await Tasks.findOne({
+            where: {
+                id,
+            }
+        });
+        res.send(task);
+    }
+    catch (error) {
+        res.send(error);
+    }
+};
 const updateTasks = async (req, res) => {
     try {
         const { id } = req.params;

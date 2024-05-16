@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
   Tasks.init({
     taskTitle: DataTypes.STRING,
     taskLevel: DataTypes.STRING,
-    taskType: DataTypes.STRING,
+    taskType: DataTypes.INTEGER,
     endDay: DataTypes.DATE,
     startDay: DataTypes.DATE,
     status:DataTypes.BOOLEAN,
