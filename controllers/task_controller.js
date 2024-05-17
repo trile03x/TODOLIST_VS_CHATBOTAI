@@ -80,7 +80,7 @@ const updateTasks = async (req, res) => {
                 id,
             }
         });
-        res.send("Update");
+        res.status(200).send("Update");
     }
     catch (error) {
         res.send(error);

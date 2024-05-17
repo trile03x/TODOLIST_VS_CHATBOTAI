@@ -10,7 +10,6 @@
 // });
 
 // End ChatBot AI
-
 // Navbar
 
 const menu = document.querySelector(".navbar__links");
@@ -30,5 +29,4 @@ overlay.addEventListener("click", () => {
 });
 
 // End Navbar
-
 

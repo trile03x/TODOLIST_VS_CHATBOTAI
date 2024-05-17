@@ -1,4 +1,5 @@
 
+let checkStatus = false;
 function formatDate(dateString) {
     const date = new Date(dateString);
     const day = date.getDate();
@@ -17,6 +18,7 @@ btnSearch.addEventListener("click", async () => {
             taskType: category,
             status: status
         });
+        checkStatus = true;
         const tasks = response.data;
         const taskList = document.querySelector(".task-list");
         taskList.innerHTML = ""; // Clear existing task items
@@ -32,23 +34,28 @@ btnSearch.addEventListener("click", async () => {
             }
             taskItem.classList.add("task-item");
             taskItem.innerHTML = `
-                <div class="row">
-                    <h3 class="task-name">${task.taskTitle}</h3>
-                    <img src="./asstets/icons/info-icon.svg" alt="" class="icon" />
+            <div class="row">
+                <h3 class="task-name">${task.taskTitle}</h3>
+                <img src="./asstets/icons/info-icon.svg" alt="" class="icon" />
+            </div>
+            <div class="row">
+                <p class="task-date">Start date: <span>${startDay}</span></p>
+                <img src="./asstets/icons/edit-icon.svg" alt="" class="icon btn-update" id="${task.id}" />
+            </div>
+            <div class="row">
+                <div class="task-completed">
+                    <img src="./asstets/icons/icon-status.svg" alt="" class="icon" />
+                    <p class="task-desc">Status: ${statusTxt}</p>
                 </div>
-                <div class="row">
-                    <p class="task-date">Start date: <span>${startDay}</span></p>
-                    <img src="./asstets/icons/edit-icon.svg" alt="" class="icon" />
-                </div>
-                <div class="row">
-                    <div class="task-completed">
-                        <img src="./asstets/icons/icon-status.svg" alt="" class="icon" />
-                        <p class="task-desc">Status: ${statusTxt}</p>
-                    </div>
-                    <img class="icon btn-delete" src="./asstets/icons/delete-icon.svg" alt="" id="${task.id}" />
-                </div>
-            `;
+                <img class="icon btn-delete" src="./asstets/icons/delete-icon.svg" alt="" id="${task.id}" />
+            </div>
+        `;
+        
             taskList.appendChild(taskItem);
+            const btnUpdate = document.querySelectorAll(".btn-update");
+            btnUpdate.forEach(btn => {
+                btn.addEventListener('click', updateTask)
+            })
             const deleteBtn = document.querySelectorAll(".btn-delete");
             deleteBtn.forEach(btn => {
                 btn.addEventListener('click', deleteTask)
@@ -69,6 +76,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             status: status
         });
         const tasks = response.data;
+        console.log(tasks);
         const taskList = document.querySelector(".task-list");
         taskList.innerHTML = "";
         tasks.forEach(task => {
@@ -89,14 +97,14 @@ document.addEventListener("DOMContentLoaded", async () => {
                 </div>
                 <div class="row">
                     <p class="task-date">Start date: <span>${startDay}</span></p>
-                    <img src="./asstets/icons/edit-icon.svg" alt="" class="icon" />
+                    <img src="./asstets/icons/edit-icon.svg" alt="" class="icon btn-update" id="${task.id}" />
                 </div>
                 <div class="row">
                     <div class="task-completed">
                         <img src="./asstets/icons/icon-status.svg" alt="" class="icon" />
                         <p class="task-desc">Status: ${statusTxt}</p>
                     </div>
-                    <img class="icon btn-delete" src="./asstets/icons/delete-icon.svg" alt="" id="${task.id}" />
+                    <img  src="./asstets/icons/delete-icon.svg" alt="" class="icon btn-delete" id="${task.id}" />
                 </div>
             `;
             taskList.appendChild(taskItem);
@@ -109,10 +117,14 @@ document.addEventListener("DOMContentLoaded", async () => {
     deleteBtn.forEach(btn => {
         btn.addEventListener('click', deleteTask)
     })
+    const btnUpdate = document.querySelectorAll(".btn-update");
+    btnUpdate.forEach(btn => {
+        btn.addEventListener('click', updateTask);
+    })
 })
 async function deleteTask(event) {
     const taskId = event.target.getAttribute('id');
-    const response = await axios.delete(`http://localhost:3036/api/v1/task/${taskId}`)
+    const response = await axios.delete(`http://localhost:3036/api/v1/task/${taskId}`);
     if (response.status == 200) {
         alert("Removed");
         event.target.closest('.task-item').remove();
@@ -121,3 +133,15 @@ async function deleteTask(event) {
         alert("Remove fail");
     }
 }
+async function updateTask(event) {
+    const taskId = event.target.getAttribute('id');
+    // console.log(taskId);
+    try{
+        window.location.href = `update_task.html?id=${taskId}`;
+    }
+    catch(error)
+    {
+        alert(error);
+    }
+}
+
