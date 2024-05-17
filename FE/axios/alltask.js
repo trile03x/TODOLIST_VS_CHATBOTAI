@@ -19,7 +19,7 @@ btnSearch.addEventListener("click", async () => {
         });
         const tasks = response.data;
         const taskList = document.querySelector(".task-list");
-        // taskList.innerHTML = ""; // Clear existing task items
+        taskList.innerHTML = ""; // Clear existing task items
         tasks.forEach(task => {
             const startDay = formatDate(task.startDay);
             const taskItem = document.createElement("div");

@@ -1,0 +1,76 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.update-task {
+  position: relative;
+  margin-top: 50px;
+  width: 600px;
+}
+
+.task-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  height: 120px;
+  border-radius: 3px;
+  background: #83c5be;
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.update-task_block {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.update-task__input {
+  width: 300px;
+  padding: 20px 2px;
+}
+
+.update-task__input label {
+  display: block;
+  color: var(--green-l);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.update-task__input input,
+.update-task__input select {
+  width: calc(100% - 20px);
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+.update-task__input textarea {
+  width: 600px;
+  height: 100px;
+  resize: none;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.update-task__btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #83c5be;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.update-task__btn:hover {
+  background-color: var(--green-l);
+}
