@@ -19,11 +19,7 @@ btnSearch.addEventListener("click", async () => {
         });
         const tasks = response.data;
         const taskList = document.querySelector(".task-list");
-<<<<<<< HEAD
         taskList.innerHTML = ""; // Clear existing task items
-=======
-        taskList.innerHTML = "";
->>>>>>> 408f07eae35d5d323c765d58c6ad2b83fd5d1734
         tasks.forEach(task => {
             const startDay = formatDate(task.startDay);
             const taskItem = document.createElement("div");
