@@ -18,6 +18,18 @@
 
 // End Form Login
 
+// ChatBot AI
+
+const botChat = document.querySelector('.bot-chat');
+console.log(botChat);
+const formChatbot = document.querySelector('.form__chatbot');
+console.log(formChatbot);
+
+botChat.addEventListener('click', () => {
+  formChatbot.classList.toggle('active');
+});
+
+// End ChatBot AI
 
 // Navbar
 
@@ -38,3 +50,5 @@ overlay.addEventListener("click", () => {
 });
 
 // End Navbar
+
+

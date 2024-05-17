@@ -45,18 +45,30 @@ const showDetailTasks = async (req, res) => {
         res.send(error);
     }
 };
-const showDetailTasksTest = async (req, res) => {
+const showDetailTaskByQuery = async (req, res) => {
     try {
-        const { taskType,taskLevel,status } = req.params;
-        const task = await Tasks.findOne({
-            where: {
-                id,
-            }
-        });
-        res.send(task);
+        const { taskLevel, taskType, status } = req.body;
+        // console.log(taskLevel, taskType,status);
+        if (taskLevel != -1 && taskType != -1 && status != -1) {
+            let tasks = await Tasks.findAll({
+                where: {
+                    taskType,
+                    taskLevel,
+                    status
+                }
+            });
+            res.status(200).send(tasks);
+        } else if (taskLevel == -1 && taskType == -1 && status == -1) {
+            let tasks = await Tasks.findAll();
+            res.status(200).send(tasks);
+        }
+        else {
+            res.status(404).send("Input data is not enough")
+        }
+
     }
     catch (error) {
-        res.send(error);
+        res.status(404).send(error);
     }
 };
 const updateTasks = async (req, res) => {
@@ -82,9 +94,9 @@ const deleteTasks = async (req, res) => {
                 id,
             }
         })
-        res.send("Removed");
+        res.status(200).send("Removed");
     } catch (error) {
-        res.send(error);
+        res.status(404).send(error);
     }
 }
 module.exports = {
@@ -92,5 +104,6 @@ module.exports = {
     showTasks,
     showDetailTasks,
     updateTasks,
-    deleteTasks
+    deleteTasks,
+    showDetailTaskByQuery
 }
