@@ -4,7 +4,7 @@ const {Tasks} = require("../models/index");
 const {checkEmty}= require("../middleware/validations/check");
 const {createTasks,showTasks,showDetailTasks,updateTasks,deleteTasks,showDetailTaskByQuery} = require("../controllers/task_controller")
 const taskRouter = express.Router();
-taskRouter.get("/filter",showDetailTaskByQuery);
+taskRouter.post("/filter",showDetailTaskByQuery);
 taskRouter.post("/create",createTasks);
 taskRouter.get("/show",showTasks);
 taskRouter.get("/:id",checkEmty(Tasks),showDetailTasks);

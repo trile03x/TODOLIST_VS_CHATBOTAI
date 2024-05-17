@@ -53,13 +53,13 @@ const showDetailTaskByQuery = async (req, res) => {
             where: {
                 taskType,
                 taskLevel,
-                status,
+                status
             }
         });
-        res.send(tasks);
+        res.status(200).send(tasks);
     }
     catch (error) {
-        res.send(error);
+        res.status(404).send(error);
     }
 };
 const updateTasks = async (req, res) => {

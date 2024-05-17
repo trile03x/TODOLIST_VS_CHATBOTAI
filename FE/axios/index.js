@@ -21,18 +21,18 @@ document.addEventListener("DOMContentLoaded", async () => {
           taskItem.innerHTML = `
             <div class="row">
               <h3 class="task-name">${task.taskTitle}</h3>
-              <img src="./assets/icons/info-icon.svg" alt="" class="icon" />
+              <img src="./asstets/icons/info-icon.svg" alt="" class="icon" />
             </div>
             <div class="row">
               <p class="task-date">Start date: <span>${startDay}</span></p>
-              <img src="./assets/icons/edit-icon.svg" alt="" class="icon" />
+              <img src="./asstets/icons/edit-icon.svg" alt="" class="icon" />
             </div>
             <div class="row">
               <div class="task-completed">
-                <img src="./assets/icons/mark-icon.svg" alt="" class="icon" />
+                <img src="./asstets/icons/mark-icon.svg" alt="" class="icon" />
                 <p class="task-desc">Mark as completed</p>
               </div>
-              <img src="./assets/icons/delete-icon.svg" alt="" class="icon" />
+              <img src="./asstets/icons/delete-icon.svg" alt="" class="icon" />
             </div>
           `;
           runningTasksContainer.appendChild(taskItem);
@@ -45,14 +45,14 @@ document.addEventListener("DOMContentLoaded", async () => {
               <p class="task-date">Start date: <span>${startDay}</span></p>
               <p class="task-date">End date: <span>${endDay}</span></p>
               <div class="task-completed">
-                <img src="./assets/icons/check-icon.svg" alt="" class="icon" />
+                <img src="./asstets/icons/check-icon.svg" alt="" class="icon" />
                 <p class="task-desc">Completed</p>
               </div>
             </div>
             <div class="column">
-              <img src="./assets/icons/info-icon.svg" alt="" class="icon" />
-              <img src="./assets/icons/edit-icon.svg" alt="" class="icon" />
-              <img src="./assets/icons/delete-icon.svg" alt="" class="icon" />
+              <img src="./asstets/icons/info-icon.svg" alt="" class="icon" />
+              <img src="./asstets/icons/edit-icon.svg" alt="" class="icon" />
+              <img src="./asstets/icons/delete-icon.svg" alt="" class="icon" />
             </div>
           `;
           completedTasksContainer.appendChild(taskItem);
@@ -66,18 +66,18 @@ document.addEventListener("DOMContentLoaded", async () => {
           taskItem.innerHTML = `
             <div class="row">
               <h3 class="task-name">${task.taskTitle}</h3>
-              <img src="./assets/icons/info-icon.svg" alt="" class="icon" />
+              <img src="./asstets/icons/info-icon.svg" alt="" class="icon" />
             </div>
             <div class="row">
               <p class="task-date">Start date: <span>${startDay}</span></p>
-              <img src="./assets/icons/edit-icon.svg" alt="" class="icon" />
+              <img src="./asstets/icons/edit-icon.svg" alt="" class="icon" />
             </div>
             <div class="row">
               <div class="task-completed">
-                <img src="./assets/icons/mark-icon.svg" alt="" class="icon" />
+                <img src="./asstets/icons/mark-icon.svg" alt="" class="icon" />
                 <p class="task-desc">Mark as completed</p>
               </div>
-              <img src="./assets/icons/delete-icon.svg" alt="" class="icon" />
+              <img src="./asstets/icons/delete-icon.svg" alt="" class="icon" />
             </div>
           `;
           runningTasksContainer.appendChild(taskItem);
@@ -90,14 +90,14 @@ document.addEventListener("DOMContentLoaded", async () => {
               <p class="task-date">Start date: <span>${startDay}</span></p>
               <p class="task-date">End date: <span>${endDay}</span></p>
               <div class="task-completed">
-                <img src="./assets/icons/check-icon.svg" alt="" class="icon" />
+                <img src="./asstets/icons/check-icon.svg" alt="" class="icon" />
                 <p class="task-desc">Completed</p>
               </div>
             </div>
             <div class="column">
-              <img src="./assets/icons/info-icon.svg" alt="" class="icon" />
-              <img src="./assets/icons/edit-icon.svg" alt="" class="icon" />
-              <img src="./assets/icons/delete-icon.svg" alt="" class="icon" />
+              <img src="./asstets/icons/info-icon.svg" alt="" class="icon" />
+              <img src="./asstets/icons/edit-icon.svg" alt="" class="icon" />
+              <img src="./asstets/icons/delete-icon.svg" alt="" class="icon" />
             </div>
           `;
           completedTasksContainer.appendChild(taskItem);
@@ -111,18 +111,18 @@ document.addEventListener("DOMContentLoaded", async () => {
           taskItem.innerHTML = `
             <div class="row">
               <h3 class="task-name">${task.taskTitle}</h3>
-              <img src="./assets/icons/info-icon.svg" alt="" class="icon" />
+              <img src="./asstets/icons/info-icon.svg" alt="" class="icon" />
             </div>
             <div class="row">
               <p class="task-date">Start date: <span>${startDay}</span></p>
-              <img src="./assets/icons/edit-icon.svg" alt="" class="icon" />
+              <img src="./asstets/icons/edit-icon.svg" alt="" class="icon" />
             </div>
             <div class="row">
               <div class="task-completed">
-                <img src="./assets/icons/mark-icon.svg" alt="" class="icon" />
+                <img src="./asstets/icons/mark-icon.svg" alt="" class="icon" />
                 <p class="task-desc">Mark as completed</p>
               </div>
-              <img src="./assets/icons/delete-icon.svg" alt="" class="icon" />
+              <img src="./asstets/icons/delete-icon.svg" alt="" class="icon" />
             </div>
           `;
           runningTasksContainer.appendChild(taskItem);
@@ -135,14 +135,14 @@ document.addEventListener("DOMContentLoaded", async () => {
               <p class="task-date">Start date: <span>${startDay}</span></p>
               <p class="task-date">End date: <span>${endDay}</span></p>
               <div class="task-completed">
-                <img src="./assets/icons/check-icon.svg" alt="" class="icon" />
+                <img src="./asstets/icons/check-icon.svg" alt="" class="icon" />
                 <p class="task-desc">Completed</p>
               </div>
             </div>
             <div class="column">
-              <img src="./assets/icons/info-icon.svg" alt="" class="icon" />
-              <img src="./assets/icons/edit-icon.svg" alt="" class="icon" />
-              <img src="./assets/icons/delete-icon.svg" alt="" class="icon" />
+              <img src="./asstets/icons/info-icon.svg" alt="" class="icon" />
+              <img src="./asstets/icons/edit-icon.svg" alt="" class="icon" />
+              <img src="./asstets/icons/delete-icon.svg" alt="" class="icon" />
             </div>
           `;
           completedTasksContainer.appendChild(taskItem);

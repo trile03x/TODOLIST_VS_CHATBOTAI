@@ -26,7 +26,7 @@ document.getElementById('form-create-task').addEventListener('submit', async fun
             taskType: category,
             endDay: formattedEndDate,
             startDay: formattedDate,
-            status: false,
+            status: true,
             descTask: taskDesc
 
         });
