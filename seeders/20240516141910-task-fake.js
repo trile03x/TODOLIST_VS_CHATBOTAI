@@ -17,7 +17,7 @@ module.exports = {
       {
         taskTitle: "Coding CDIO",
         taskLevel: "3",
-        taskType: "Study",
+        taskType: "2",
         endDay: "2024-05-13 09:39:17",
         startDay: "2024-05-13 09:39:17",
         status: "1",
@@ -29,7 +29,7 @@ module.exports = {
       {
         taskTitle: "Coding FC2",
         taskLevel: "2",
-        taskType: "Study",
+        taskType: "2",
         endDay: "2024-05-13 09:39:17",
         startDay: "2024-05-13 09:39:17",
         status: "0",
@@ -40,7 +40,7 @@ module.exports = {
       {
         taskTitle: "Create Document for Design",
         taskLevel: "3",
-        taskType: "Work",
+        taskType: "2",
         endDay: "2024-05-13 09:39:17",
         startDay: "2024-05-13 09:39:17",
         status: "1",
@@ -51,7 +51,7 @@ module.exports = {
       {
         taskTitle: "Clean the bedroom ",
         taskLevel: "1",
-        taskType: "Work",
+        taskType: "3",
         endDay: "2024-05-13 09:39:17",
         startDay: "2024-05-13 09:39:17",
         status: "0",

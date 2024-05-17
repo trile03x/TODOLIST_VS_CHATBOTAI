@@ -148,18 +148,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           completedTasksContainer.appendChild(taskItem);
         }
       }
-
-
-
-
-
-
-
-
-
-
       // 
-
     });
   } catch (error) {
     alert(error)
