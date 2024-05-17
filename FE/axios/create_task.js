@@ -19,24 +19,29 @@ document.getElementById('form-create-task').addEventListener('submit', async fun
         ('0' + startDay.getHours()).slice(-2) + ':' +
         ('0' + startDay.getMinutes()).slice(-2) + ':' +
         ('0' + startDay.getSeconds()).slice(-2);
-    try {
-        const res = await axios.post('http://localhost:3036/api/v1/task/create', {
-            taskTitle: taskName,
-            taskLevel: priority,
-            taskType: category,
-            endDay: formattedEndDate,
-            startDay: formattedDate,
-            status: true,
-            descTask: taskDesc
-
-        });
-        if (res.status === 200) {
-            alert("Add task successful");
+    if(taskName!=''&&taskDesc!=''){
+        try {
+            const res = await axios.post('http://localhost:3036/api/v1/task/create', {
+                taskTitle: taskName,
+                taskLevel: priority,
+                taskType: category,
+                endDay: formattedEndDate,
+                startDay: formattedDate,
+                status: true,
+                descTask: taskDesc
+    
+            });
+            if (res.status === 200) {
+                alert("Add task successful");
+            }
+            else {
+                alert("Add task fail");
+            }
+        } catch (error) {
+            alert(error);
         }
-        else {
-            alert("Add task fail");
-        }
-    } catch (error) {
-        alert(error);
+    }
+    else{
+        alert("Nhap day du cac thong tin")
     }
 })
