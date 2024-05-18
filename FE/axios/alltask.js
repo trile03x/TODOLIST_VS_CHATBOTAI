@@ -1,4 +1,4 @@
-
+const tokenCheck = window.check();
 let checkStatus = false;
 function formatDate(dateString) {
     const date = new Date(dateString);
@@ -7,33 +7,34 @@ function formatDate(dateString) {
     const year = date.getFullYear();
     return `${day}/${month}/${year}`;
 }
-const btnSearch = document.getElementById("btn-search");
-btnSearch.addEventListener("click", async () => {
-    const category = document.getElementById("category").value;
-    const priority = document.getElementById("priority").value;
-    const status = document.getElementById("status").value;
-    try {
-        const response = await axios.post('http://localhost:3036/api/v1/task/filter', {
-            taskLevel: priority,
-            taskType: category,
-            status: status
-        });
-        checkStatus = true;
-        const tasks = response.data;
-        const taskList = document.querySelector(".task-list");
-        taskList.innerHTML = ""; // Clear existing task items
-        tasks.forEach(task => {
-            const startDay = formatDate(task.startDay);
-            const taskItem = document.createElement("div");
-            let statusTxt;
-            if (task.status == false) {
-                statusTxt = "Running";
-            }
-            else {
-                statusTxt = "Completed";
-            }
-            taskItem.classList.add("task-item");
-            taskItem.innerHTML = `
+if (tokenCheck != -1) {
+    const btnSearch = document.getElementById("btn-search");
+    btnSearch.addEventListener("click", async () => {
+        const category = document.getElementById("category").value;
+        const priority = document.getElementById("priority").value;
+        const status = document.getElementById("status").value;
+        try {
+            const response = await axios.post('http://localhost:3036/api/v1/task/filter', {
+                taskLevel: priority,
+                taskType: category,
+                status: status
+            });
+            checkStatus = true;
+            const tasks = response.data;
+            const taskList = document.querySelector(".task-list");
+            taskList.innerHTML = ""; // Clear existing task items
+            tasks.forEach(task => {
+                const startDay = formatDate(task.startDay);
+                const taskItem = document.createElement("div");
+                let statusTxt;
+                if (task.status == false) {
+                    statusTxt = "Running";
+                }
+                else {
+                    statusTxt = "Completed";
+                }
+                taskItem.classList.add("task-item");
+                taskItem.innerHTML = `
             <div class="row">
                 <h3 class="task-name">${task.taskTitle}</h3>
                 <img src="./asstets/icons/info-icon.svg" alt="" class="icon" />
@@ -50,47 +51,47 @@ btnSearch.addEventListener("click", async () => {
                 <img class="icon btn-delete" src="./asstets/icons/delete-icon.svg" alt="" id="${task.id}" />
             </div>
         `;
-        
-            taskList.appendChild(taskItem);
-            const btnUpdate = document.querySelectorAll(".btn-update");
-            btnUpdate.forEach(btn => {
-                btn.addEventListener('click', updateTask)
-            })
-            const deleteBtn = document.querySelectorAll(".btn-delete");
-            deleteBtn.forEach(btn => {
-                btn.addEventListener('click', deleteTask)
-            })
-        });
-    } catch (error) {
-        alert("Nhập đủ đi cha");
-    }
-})
-document.addEventListener("DOMContentLoaded", async () => {
-    const category = document.getElementById("category").value;
-    const priority = document.getElementById("priority").value;
-    const status = document.getElementById("status").value;
-    try {
-        const response = await axios.post('http://localhost:3036/api/v1/task/filter', {
-            taskLevel: priority,
-            taskType: category,
-            status: status
-        });
-        const tasks = response.data;
-        console.log(tasks);
-        const taskList = document.querySelector(".task-list");
-        taskList.innerHTML = "";
-        tasks.forEach(task => {
-            const startDay = formatDate(task.startDay);
-            const taskItem = document.createElement("div");
-            let statusTxt;
-            if (task.status == false) {
-                statusTxt = "Running";
-            }
-            else {
-                statusTxt = "Completed";
-            }
-            taskItem.classList.add("task-item");
-            taskItem.innerHTML = `
+
+                taskList.appendChild(taskItem);
+                const btnUpdate = document.querySelectorAll(".btn-update");
+                btnUpdate.forEach(btn => {
+                    btn.addEventListener('click', updateTask)
+                })
+                const deleteBtn = document.querySelectorAll(".btn-delete");
+                deleteBtn.forEach(btn => {
+                    btn.addEventListener('click', deleteTask)
+                })
+            });
+        } catch (error) {
+            alert(error);
+        }
+    })
+    document.addEventListener("DOMContentLoaded", async () => {
+        const category = document.getElementById("category").value;
+        const priority = document.getElementById("priority").value;
+        const status = document.getElementById("status").value;
+        try {
+            const response = await axios.post('http://localhost:3036/api/v1/task/filter', {
+                taskLevel: priority,
+                taskType: category,
+                status: status
+            });
+            const tasks = response.data;
+            console.log(tasks);
+            const taskList = document.querySelector(".task-list");
+            taskList.innerHTML = "";
+            tasks.forEach(task => {
+                const startDay = formatDate(task.startDay);
+                const taskItem = document.createElement("div");
+                let statusTxt;
+                if (task.status == false) {
+                    statusTxt = "Running";
+                }
+                else {
+                    statusTxt = "Completed";
+                }
+                taskItem.classList.add("task-item");
+                taskItem.innerHTML = `
                 <div class="row">
                     <h3 class="task-name">${task.taskTitle}</h3>
                     <img src="./asstets/icons/info-icon.svg" alt="" class="icon" />
@@ -107,21 +108,26 @@ document.addEventListener("DOMContentLoaded", async () => {
                     <img  src="./asstets/icons/delete-icon.svg" alt="" class="icon btn-delete" id="${task.id}" />
                 </div>
             `;
-            taskList.appendChild(taskItem);
-        });
-    } catch (error) {
-        alert("Nhập đủ đi cha");
-    }
-    // delete
-    const deleteBtn = document.querySelectorAll(".btn-delete");
-    deleteBtn.forEach(btn => {
-        btn.addEventListener('click', deleteTask)
+                taskList.appendChild(taskItem);
+            });
+        } catch (error) {
+            alert("Nhập đủ bộ lọc");
+        }
+        // delete
+        const deleteBtn = document.querySelectorAll(".btn-delete");
+        deleteBtn.forEach(btn => {
+            btn.addEventListener('click', deleteTask)
+        })
+        const btnUpdate = document.querySelectorAll(".btn-update");
+        btnUpdate.forEach(btn => {
+            btn.addEventListener('click', updateTask);
+        })
     })
-    const btnUpdate = document.querySelectorAll(".btn-update");
-    btnUpdate.forEach(btn => {
-        btn.addEventListener('click', updateTask);
-    })
-})
+}
+else {
+    alert("Bạn chưa đăng nhập");
+    window.location.href = "login.html";
+}
 async function deleteTask(event) {
     const taskId = event.target.getAttribute('id');
     const response = await axios.delete(`http://localhost:3036/api/v1/task/${taskId}`);
@@ -136,11 +142,10 @@ async function deleteTask(event) {
 async function updateTask(event) {
     const taskId = event.target.getAttribute('id');
     // console.log(taskId);
-    try{
+    try {
         window.location.href = `update_task.html?id=${taskId}`;
     }
-    catch(error)
-    {
+    catch (error) {
         alert(error);
     }
 }

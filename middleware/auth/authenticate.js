@@ -1,18 +1,17 @@
-const jwt = require("jsonwebtoken");
-const authenticate = (req, res, next) => {
-    try {
-        const token = req.header("token");
-        const decode = jwt.verify(token, "usersTokenLogin");
-        if (decode) {
-            next();
-        }
+// const authenticate = (req, res, next) => {
+//     try {
+//         const token = localStorage.getItem("token");
+//         if(token){
+//             next();
+//         }
+//         else{
+//             return 0;
+//         }
+//     } catch (error) {
+//         alert(error)
+//     }
+// };
 
-    }
-    catch (error) {
-        res.send(error);
-    }
-};
-
-module.exports = {
-    authenticate,
-}
+// module.exports = {
+//     authenticate,
+// };

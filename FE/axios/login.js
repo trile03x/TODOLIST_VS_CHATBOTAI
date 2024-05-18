@@ -10,6 +10,8 @@ document.getElementById('form').addEventListener('submit', async function (event
     );
     if (response.status === 200) {
       alert('Login successful!');
+      localStorage.setItem('token', response.data.token);
+      // document.cookie = `token=${response.data.token}; path=/; secure`;
       window.location.href = '/FE/index.html';
     } else {
       alert('Login failed: ');

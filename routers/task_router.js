@@ -1,5 +1,4 @@
 const express = require("express");
-const {authenticate}=require("../middleware/auth/authenticate");
 const {Tasks} = require("../models/index");
 const {checkEmty}= require("../middleware/validations/check");
 const {createTasks,showTasks,showDetailTasks,updateTasks,deleteTasks,showDetailTaskByQuery} = require("../controllers/task_controller")
