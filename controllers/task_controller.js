@@ -1,12 +1,23 @@
 const { where, Op } = require("sequelize");
-const { Tasks } = require("../models/index")
+const { Tasks, taskUser, user } = require("../models/index");
 const createTasks = async (req, res) => {
-    const { taskTitle, taskLevel, taskType, endDay, startDay, descTask, status } = req.body;
+    const { taskTitle, taskLevel, taskType, endDay, startDay, descTask, status, email } = req.body;
     try {
         const newTask = await Tasks.create({ taskTitle, taskLevel, taskType, endDay, startDay, descTask, status });
-        res.status(200).send(newTask);
+        const task_id = newTask.id;
+        const checkUser = await user.findOne({
+            where: {
+                email
+            }
+        })
+        if (!checkUser) {
+            return res.status(404).json({ error: 'User not found' });
+        }
+        const user_id = checkUser.id;
+        const newTaskUser = await taskUser.create({ user_id, task_id });
+        return res.status(200).send(newTaskUser)
     } catch (error) {
-        res.send(error)
+        return res.status(500).json({ error: 'Internal Server Error' });
     }
 };
 const showTasks = async (req, res) => {
@@ -47,19 +58,43 @@ const showDetailTasks = async (req, res) => {
 };
 const showDetailTaskByQuery = async (req, res) => {
     try {
-        const { taskLevel, taskType, status } = req.body;
+        let idUser;
+        const { taskLevel, taskType, status, email } = req.body;
         // console.log(taskLevel, taskType,status);
-        if (taskLevel != -1 && taskType != -1 && status != -1) {
+        const userCheck = await user.findOne({
+            where: {
+                email
+            }
+        })
+        idUser = userCheck.id;
+        const listTaskId = await taskUser.findAll({
+            where: {
+                user_id: idUser
+            },
+            attributes: ['task_id']
+        })
+        // Lấy danh sách các task_id từ listTaskId
+        const taskIds = listTaskId.map(record => record.task_id);
+        // Xây dựng điều kiện tìm kiếm cho các thuộc tính
+        console.log("taskIds", taskIds);
+        let whereClause = {
+            id: {
+                [Op.in]: taskIds
+            }
+        };
+        if (taskLevel == -1 && taskType == -1 && status == -1) {
             let tasks = await Tasks.findAll({
-                where: {
-                    taskType,
-                    taskLevel,
-                    status
-                }
+                where: whereClause
             });
             res.status(200).send(tasks);
-        } else if (taskLevel == -1 && taskType == -1 && status == -1) {
-            let tasks = await Tasks.findAll();
+        } else if (taskLevel != -1 && taskType != -1 && status != -1) {
+            whereClause.taskLevel = taskLevel;
+            whereClause.status = status;
+            whereClause.taskType = taskType;
+            let tasks = await Tasks.findAll({
+                where: whereClause
+            }
+            );
             res.status(200).send(tasks);
         }
         else {

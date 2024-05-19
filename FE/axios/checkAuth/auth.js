@@ -1,4 +1,3 @@
-const token = localStorage.getItem('token');
 window.check = () => {
     const token = localStorage.getItem('token');
     if (token) {

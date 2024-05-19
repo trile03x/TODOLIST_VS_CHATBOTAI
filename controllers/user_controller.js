@@ -6,12 +6,24 @@ const jwt = require("jsonwebtoken");
 const register = async (req, res) => {
     const { name, email, pass } = req.body;
     try {
-        // random string to encrypt
-        const salt = bcryptjs.genSaltSync(10);
-        // String encrypt salt + pass
-        const hashPass = bcryptjs.hashSync(pass, salt);
-        const newUser = await user.create({ name, email, pass: hashPass });
-        res.status(200).send(newUser);
+        const checkEmail = await user.findOne({
+            where: {
+                email:email,
+            }
+        });
+        if (checkEmail!=null) {
+           res.status(400).send("fail");
+        }
+        else {
+            // random string to encrypt
+            const salt = bcryptjs.genSaltSync(10);
+            // String encrypt salt + pass
+            const hashPass = bcryptjs.hashSync(pass, salt);
+            const newUser = await user.create({ name, email, pass: hashPass });
+            if (newUser) {
+                res.status(200).send(newUser);
+            }
+        }
 
     } catch (error) {
         res.send(error)

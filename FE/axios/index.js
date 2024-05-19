@@ -5,7 +5,7 @@ function formatDate(dateString) {
   const year = date.getFullYear();
   return `${day}/${month}/${year}`;
 }
-
+console.log(localStorage.getItem('emailUser'));
 document.addEventListener("DOMContentLoaded", async () => {
   try {
     const response = await axios.get('http://localhost:3036/api/v1/task/show');

@@ -1,4 +1,5 @@
 const tokenCheck = window.check();
+const email = localStorage.getItem("emailUser");
 let checkStatus = false;
 function formatDate(dateString) {
     const date = new Date(dateString);
@@ -17,7 +18,8 @@ if (tokenCheck != -1) {
             const response = await axios.post('http://localhost:3036/api/v1/task/filter', {
                 taskLevel: priority,
                 taskType: category,
-                status: status
+                status: status,
+                email:email
             });
             checkStatus = true;
             const tasks = response.data;
@@ -63,7 +65,7 @@ if (tokenCheck != -1) {
                 })
             });
         } catch (error) {
-            alert(error);
+            alert("Nhập đủ 3 điều kiện để lọc");
         }
     })
     document.addEventListener("DOMContentLoaded", async () => {
@@ -74,10 +76,11 @@ if (tokenCheck != -1) {
             const response = await axios.post('http://localhost:3036/api/v1/task/filter', {
                 taskLevel: priority,
                 taskType: category,
-                status: status
+                status: status,
+                email:email
             });
             const tasks = response.data;
-            console.log(tasks);
+            // console.log(tasks);
             const taskList = document.querySelector(".task-list");
             taskList.innerHTML = "";
             tasks.forEach(task => {

@@ -1,4 +1,5 @@
 const tokenCheck = window.check();
+const email = localStorage.getItem("emailUser");
 if (tokenCheck != -1) {
     document.getElementById('form-create-task').addEventListener('submit', async function (event) {
         event.preventDefault();
@@ -29,9 +30,9 @@ if (tokenCheck != -1) {
                     taskType: category,
                     endDay: formattedEndDate,
                     startDay: formattedDate,
-                    status: true,
-                    descTask: taskDesc
-
+                    status: false,
+                    descTask: taskDesc,
+                    email:email
                 });
                 if (res.status === 200) {
                     alert("Add task successful");

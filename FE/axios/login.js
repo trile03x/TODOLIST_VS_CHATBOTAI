@@ -2,6 +2,7 @@ document.getElementById('form').addEventListener('submit', async function (event
   event.preventDefault();
   const username = document.getElementById('username-input').value;
   const password = document.getElementById('password-input').value;
+  localStorage.setItem('emailUser',username);
   try {
     const response = await axios.post('http://localhost:3036/api/v1/users/login', {
       email: username,
