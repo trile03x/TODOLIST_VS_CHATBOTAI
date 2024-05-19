@@ -25,18 +25,18 @@ document.addEventListener("DOMContentLoaded", async () => {
           taskItem.innerHTML = `
             <div class="row">
               <h3 class="task-name">${task.taskTitle}</h3>
-              <img src="./asstets/icons/info-icon.svg" alt="" class="icon" />
+              
             </div>
             <div class="row">
               <p class="task-date">Start date: <span>${startDay}</span></p>
-              <img src="./asstets/icons/edit-icon.svg" alt="" class="icon" />
+              
             </div>
             <div class="row">
               <div class="task-completed">
                 <input type="checkbox" class="mark"/>
                 <p class="task-desc">Mark as completed</p>
               </div>
-              <img src="./asstets/icons/delete-icon.svg" alt="" class="icon" />
+              
             </div>
           `;
           runningTasksContainer.appendChild(taskItem);
@@ -53,11 +53,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 <p class="task-desc">Completed</p>
               </div>
             </div>
-            <div class="column">
-              <img src="./asstets/icons/info-icon.svg" alt="" class="icon" />
-              <img src="./asstets/icons/edit-icon.svg" alt="" class="icon" />
-              <img src="./asstets/icons/delete-icon.svg" alt="" class="icon" />
-            </div>
+            
           `;
           completedTasksContainer.appendChild(taskItem);
         }
@@ -69,18 +65,16 @@ document.addEventListener("DOMContentLoaded", async () => {
           taskItem.innerHTML = `
             <div class="row">
               <h3 class="task-name">${task.taskTitle}</h3>
-              <img src="./asstets/icons/info-icon.svg" alt="" class="icon" />
+              
             </div>
             <div class="row">
               <p class="task-date">Start date: <span>${startDay}</span></p>
-              <img src="./asstets/icons/edit-icon.svg" alt="" class="icon" />
             </div>
             <div class="row">
               <div class="task-completed">
               <input type="checkbox" class="mark"/>
                 <p class="task-desc">Mark as completed</p>
               </div>
-              <img src="./asstets/icons/delete-icon.svg" alt="" class="icon" />
             </div>
           `;
           runningTasksContainer.appendChild(taskItem);
@@ -97,11 +91,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 <p class="task-desc">Completed</p>
               </div>
             </div>
-            <div class="column">
-              <img src="./asstets/icons/info-icon.svg" alt="" class="icon" />
-              <img src="./asstets/icons/edit-icon.svg" alt="" class="icon" />
-              <img src="./asstets/icons/delete-icon.svg" alt="" class="icon" />
-            </div>
+            
           `;
           completedTasksContainer.appendChild(taskItem);
         }
@@ -113,18 +103,15 @@ document.addEventListener("DOMContentLoaded", async () => {
           taskItem.innerHTML = `
             <div class="row">
               <h3 class="task-name">${task.taskTitle}</h3>
-              <img src="./asstets/icons/info-icon.svg" alt="" class="icon" />
             </div>
             <div class="row">
               <p class="task-date">Start date: <span>${startDay}</span></p>
-              <img src="./asstets/icons/edit-icon.svg" alt="" class="icon" />
             </div>
             <div class="row">
               <div class="task-completed">
                 <img src="./asstets/icons/mark-icon.svg" alt="" class="icon" />
                 <p class="task-desc">Mark as completed</p>
               </div>
-              <img src="./asstets/icons/delete-icon.svg" alt="" class="icon" />
             </div>
           `;
           runningTasksContainer.appendChild(taskItem);
@@ -141,11 +128,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 <p class="task-desc">Completed</p>
               </div>
             </div>
-            <div class="column">
-              <img src="./asstets/icons/info-icon.svg" alt="" class="icon" />
-              <img src="./asstets/icons/edit-icon.svg" alt="" class="icon" />
-              <img src="./asstets/icons/delete-icon.svg" alt="" class="icon" />
-            </div>
+            
           `;
           completedTasksContainer.appendChild(taskItem);
         }
