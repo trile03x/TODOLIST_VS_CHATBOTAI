@@ -1,126 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Embed font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Embed font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+    <!-- Icon  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <!-- reset css -->
+    <link rel="stylesheet" href="./asstets/css/reset.css" />
 
-  <!-- Icon  -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-  <!-- reset css -->
-  <link rel="stylesheet" href="./asstets/css/reset.css" />
+    <!-- styles css -->
+    <link rel="stylesheet" href="./asstets/css/style.css" />
+    <title>TodoList</title>
+  </head>
 
-  <!-- styles css -->
-  <link rel="stylesheet" href="./asstets/css/style.css" />
-  <title>TodoList</title>
-</head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <nav class="navbar">
+          <!-- menu button -->
+          <div class="navbar__icons">
+            <div class="navbar__icon"></div>
+          </div>
+          <!-- search -->
+          <div class="navbar__search">
+            <input type="text" placeholder="Search" />
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
 
-<body>
-  <header class="header">
-    <div class="container">
-      <nav class="navbar">
-        <!-- menu button -->
-        <div class="navbar__icons">
-          <div class="navbar__icon"></div>
+          <!-- Right icon -->
+          <div class="navbar__right">
+            <i class="fa-regular fa-bell"></i>
+            <i id="moon" class="fa-solid fa-moon"></i>
+            <div class="box-user">
+              <i class="fa-solid fa-user"></i>
+              <div class="info-user">
+                <div class="info-avatar">
+                  <img
+                    src="./asstets/icons/uifaces-human-image.jpg"
+                    alt=""
+                    class="img-user"
+                  />
+                  <p class="info-name">Lê Văn Tri</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <!-- links -->
+      <ul class="navbar__links">
+        <li class="navbar__link">
+          <i class="fas fa-tachometer-alt"></i>
+          <a href="">Home</a>
+        </li>
+        <li class="navbar__link">
+          <i class="fa-solid fa-list-check"></i>
+          <a href="./all_task.html">All Tasks</a>
+        </li>
+        <li class="navbar__link">
+          <i class="fa-solid fa-circle-check"></i>
+          <a href="./completed_task.html">Completed Tasks</a>
+        </li>
+        <li class="navbar__link">
+          <i class="fa-solid fa-hourglass-half"></i>
+          <a href="./running_task.html">Running Tasks</a>
+        </li>
+        <li class="navbar__link">
+          <i class="fa-solid fa-circle-plus"></i>
+          <a href="./create_task.html">Add a Task</a>
+        </li>
+      </ul>
+
+      <!-- task group -->
+
+      <!-- task group -->
+      <div class="task-group">
+        <!-- Running Tasks -->
+        <div class="task__type" id="running-tasks">
+          <h2 class="task-title">Running Tasks</h2>
+          <div class="task-list"></div>
         </div>
-        <!-- search -->
-        <div class="navbar__search">
-          <input type="text" placeholder="Search" />
-          <i class="fa-solid fa-magnifying-glass"></i>
+
+        <!-- Complete Tasks -->
+        <div class="task__type task__type--complete" id="completed-tasks">
+          <h2 class="task-title">Completed Tasks</h2>
+          <div class="task-list"></div>
         </div>
-        <!-- Right icon -->
-        <div class="navbar__right">
-          <i class="fa-regular fa-bell"></i>
-          <i id="moon" class="fa-solid fa-moon"></i>
-          <i class="fa-solid fa-user"></i>
-        </div>
-      </nav>
-    </div>
-  </header>
-
-  <main class="main">
-    <!-- links -->
-    <ul class="navbar__links">
-      <li class="navbar__link">
-        <i class="fas fa-tachometer-alt"></i>
-        <a href="">Home</a>
-      </li>
-      <li class="navbar__link">
-        <i class="fa-solid fa-list-check"></i>
-        <a href="./all_task.html">All Tasks</a>
-      </li>
-      <li class="navbar__link">
-        <i class="fa-solid fa-circle-check"></i>
-        <a href="./completed_task.html">Completed Tasks</a>
-      </li>
-      <li class="navbar__link">
-        <i class="fa-solid fa-hourglass-half"></i>
-        <a href="./running_task.html">Running Tasks</a>
-      </li>
-      <li class="navbar__link">
-        <i class="fa-solid fa-circle-plus"></i>
-        <a href="./create_task.html">Add a Task</a>
-      </li>
-    </ul>
-
-    <!-- task group -->
-
-    <!-- task group -->
-    <div class="task-group">
-      <!-- Running Tasks -->
-      <div class="task__type" id="running-tasks">
-        <h2 class="task-title">Running Tasks</h2>
-        <div class="task-list"></div>
       </div>
 
-      <!-- Complete Tasks -->
-      <div class="task__type task__type--complete" id="completed-tasks">
-        <h2 class="task-title">Completed Tasks</h2>
-        <div class="task-list"></div>
-      </div>
-    </div>
-    <!-- coin -->
-    <div class="coin-box">
-      <img src="./asstets/icons/coin.svg" alt="" style="width: 35px; height: 32px" />
-      <span class="coin-value">1000 coin</span>
-    </div>
-  </main>
-
-  <div class="container-chatbot">
-    <div class="form__chatbot">
-      <div class="container__answer">
-        <div class="message bot-message">
-          Xin chào, Bạn cần hỏi gì ?
-        </div>
-        <div class="message user-message">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas magnam debitis perferendis ea eos
-          facere maiores reiciendis. Impedit placeat nulla, iste voluptatibus rerum doloremque maiores laborum
-          eligendi perspiciatis vel soluta.
+      <div class="description">
+        <div class="coin-box">
+          <img
+            src="./asstets/icons/coin.svg"
+            alt=""
+            style="width: 35px; height: 32px"
+          />
+          <span class="coin-value">1000 coin</span>
         </div>
 
-      </div>
-      <!-- Send -->
-      <div class="container__submit">
-        <div class="input-container">
-          <input class="input__text" type="text" placeholder="Type your message here...">
-          <button class="btn__send" type="submit">Send</button>
+        <div class="description-level">
+          <div class="level low-level" style="color: #83c5be">Low</div>
+          <div class="level medium-level" style="color: #22dbdb">Medium</div>
+          <div class="level high-level" style="color: #a4d60f">High</div>
         </div>
       </div>
+    </main>
+
+    <div class="container-chatbot">
+      <div class="form__chatbot">
+        <div class="container__answer">
+          <div class="message bot-message">Xin chào, Bạn cần hỏi gì ?</div>
+          <div class="message user-message">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas
+            magnam debitis perferendis ea eos facere maiores reiciendis. Impedit
+            placeat nulla, iste voluptatibus rerum doloremque maiores laborum
+            eligendi perspiciatis vel soluta.
+          </div>
+        </div>
+        <!-- Send -->
+        <div class="container__submit">
+          <div class="input-container">
+            <input
+              class="input__text"
+              type="text"
+              placeholder="Type your message here..."
+            />
+            <button class="btn__send" type="submit">Send</button>
+          </div>
+        </div>
+      </div>
+      <div class="bot-chat">
+        <img src="./asstets/icons/robot.svg" alt="" class="robot-icon" />
+      </div>
     </div>
-    <div class="bot-chat">
-      <img src="./asstets/icons/robot.svg" alt="" class="robot-icon" />
-    </div>
-  </div>
 
-
-  <script src="./asstets/js/main.js"></script>
-  <script src="./axios/index.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-</body>
-
+    <script src="./asstets/js/main.js"></script>
+    <script src="./axios/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </body>
 </html>

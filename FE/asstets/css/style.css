@@ -196,6 +196,49 @@ img {
   color: yellow;
 }
 
+.navbar__right .box-user {
+  position: relative;
+}
+
+.navbar__right .info-user {
+  position: absolute;
+  top: 49px;
+  right: 0px;
+  width: 300px;
+  height: 0;
+  padding: 0 22px;
+  border-radius: 5px;
+  background: white;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  cursor: default;
+  overflow: hidden;
+  transition: 0.3s all;
+}
+
+.navbar__right .info-user.active {
+  height: 300px;
+}
+
+.navbar__right .info-avatar {
+  display: flex;
+  align-items: center;
+  gap: 0 15px;
+  padding: 18px 0 15px;
+  border-bottom: 1px solid black;
+}
+
+.navbar__right .img-user {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.navbar__right .info-name {
+  font-size: 1rem;
+}
+
 /* ======= task-group ========== */
 .main {
   display: flex;
@@ -290,6 +333,10 @@ img {
   font-size: 1.2rem;
   font-weight: 400;
 }
+.task-completed .mark {
+  width: 17px;
+  height: 17px;
+}
 
 .task-group .icon {
   width: 20px;
@@ -310,11 +357,35 @@ img {
   gap: 18px 0;
 }
 
-/* ===== coin ===== */
+/* ===== description ===== */
+.description {
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 50px 0;
+}
+
+.description-level .level {
+  position: relative;
+  font-size: 1.5rem;
+  margin-top: 30px;
+}
+
+.description-level .level::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: currentColor;
+  border-radius: 50%;
+  position: absolute;
+  left: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .coin-box {
   display: flex;
   justify-content: center;
-  align-self: flex-start;
   align-items: center;
   gap: 0 10px;
   min-width: 162px;

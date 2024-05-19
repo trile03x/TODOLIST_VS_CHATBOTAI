@@ -1,119 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Embed font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Embed font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+    <!-- Icon  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <!-- reset css -->
+    <link rel="stylesheet" href="./asstets/css/reset.css" />
 
-  <!-- Icon  -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-  <!-- reset css -->
-  <link rel="stylesheet" href="./asstets/css/reset.css" />
+    <!-- styles css -->
+    <link rel="stylesheet" href="./asstets/css/style.css" />
+    <link rel="stylesheet" href="./asstets/css/taskpage.css" />
+    <title>All task</title>
+  </head>
 
-  <!-- styles css -->
-  <link rel="stylesheet" href="./asstets/css/style.css" />
-  <link rel="stylesheet" href="./asstets/css/taskpage.css" />
-  <title>All task</title>
-</head>
-
-<body>
-  <header class="header">
-    <div class="container">
-      <nav class="navbar">
-        <!-- menu button -->
-        <div class="navbar__icons">
-          <div class="navbar__icon"></div>
-        </div>
-        <!-- search -->
-        <div class="navbar__search">
-          <input type="text" placeholder="Search" />
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </div>
-        <!-- Right icon -->
-        <div class="navbar__right">
-          <i class="fa-regular fa-bell"></i>
-          <i id="moon" class="fa-solid fa-moon"></i>
-          <i class="fa-solid fa-user"></i>
-        </div>
-      </nav>
-    </div>
-  </header>
-
-  <main class="main">
-    <!-- links -->
-    <ul class="navbar__links">
-      <li class="navbar__link">
-        <i class="fas fa-tachometer-alt"></i>
-        <a href="./index.html">Home</a>
-      </li>
-      <li class="navbar__link">
-        <i class="fa-solid fa-list-check"></i>
-        <a href="">All Tasks</a>
-      </li>
-      <li class="navbar__link">
-        <i class="fa-solid fa-circle-check"></i>
-        <a href="./completed_task.html">Completed Tasks</a>
-      </li>
-      <li class="navbar__link">
-        <i class="fa-solid fa-hourglass-half"></i>
-        <a href="./running_task.html">Running Tasks</a>
-      </li>
-      <li class="navbar__link">
-        <i class="fa-solid fa-circle-plus"></i>
-        <a href="./create_task.html">Add a Task</a>
-      </li>
-    </ul>
-    <div class="running-task-block">
-      <div class="running-task-heading">All Task</div>
-      <div class="running-task-body">
-        <div class="row">
-          <div class="group-btn">
-            <select class="btn btn-category" id="category">
-              <option value="-1" selected>By category</option>
-              <option value="1">Work</option>
-              <option value="2">Study</option>
-              <option value="3">Housework</option>
-            </select>
-
-            <select class="btn btn-priority" id="priority">
-              <option value="-1" selected>By priority</option>
-              <option value="1">Low</option>
-              <option value="2">Medium</option>
-              <option value="3">High</option>
-            </select>
-
-            <select class="btn btn-status" id="status">
-              <option value="-1" selected>By status</option>
-              <option value="0">Running</option>
-              <option value="1">Completed</option>
-            </select>
+  <body>
+    <header class="header">
+      <div class="container">
+        <nav class="navbar">
+          <!-- menu button -->
+          <div class="navbar__icons">
+            <div class="navbar__icon"></div>
           </div>
-          <div class="btn-search" id="btn-search">
-            <img src="./asstets/icons/search-icon.svg" alt="" class="search-icon" />
+          <!-- search -->
+          <div class="navbar__search">
+            <input type="text" placeholder="Search" />
+            <i class="fa-solid fa-magnifying-glass"></i>
           </div>
-        </div>
-
-        <!-- task list -->
-        <div class="task-list">
-        </div>
-
-        <!-- Load more -->
-        <button class="btn-load" id="btn-load">Load more</button>
+          <!-- Right icon -->
+          <div class="navbar__right">
+            <i class="fa-regular fa-bell"></i>
+            <i id="moon" class="fa-solid fa-moon"></i>
+            <i class="fa-solid fa-user"></i>
+          </div>
+        </nav>
       </div>
+    </header>
+
+    <main class="main">
+      <!-- links -->
+      <ul class="navbar__links">
+        <li class="navbar__link">
+          <i class="fas fa-tachometer-alt"></i>
+          <a href="./index.html">Home</a>
+        </li>
+        <li class="navbar__link">
+          <i class="fa-solid fa-list-check"></i>
+          <a href="">All Tasks</a>
+        </li>
+        <li class="navbar__link">
+          <i class="fa-solid fa-circle-check"></i>
+          <a href="./completed_task.html">Completed Tasks</a>
+        </li>
+        <li class="navbar__link">
+          <i class="fa-solid fa-hourglass-half"></i>
+          <a href="./running_task.html">Running Tasks</a>
+        </li>
+        <li class="navbar__link">
+          <i class="fa-solid fa-circle-plus"></i>
+          <a href="./create_task.html">Add a Task</a>
+        </li>
+      </ul>
+      <div class="running-task-block">
+        <div class="running-task-heading">All Task</div>
+        <div class="running-task-body">
+          <div class="row">
+            <div class="group-btn">
+              <select class="btn btn-category" id="category">
+                <option value="-1" selected>By category</option>
+                <option value="1">Work</option>
+                <option value="2">Study</option>
+                <option value="3">Housework</option>
+              </select>
+
+              <select class="btn btn-priority" id="priority">
+                <option value="-1" selected>By priority</option>
+                <option value="1">Low</option>
+                <option value="2">Medium</option>
+                <option value="3">High</option>
+              </select>
+
+              <select class="btn btn-status" id="status">
+                <option value="-1" selected>By status</option>
+                <option value="0">Running</option>
+                <option value="1">Completed</option>
+              </select>
+            </div>
+            <div class="btn-search" id="btn-search">
+              <img
+                src="./asstets/icons/search-icon.svg"
+                alt=""
+                class="search-icon"
+              />
+            </div>
+          </div>
+
+          <!-- task list -->
+          <div class="task-list"></div>
+
+          <!-- Clear btn -->
+          <button class="btn-clear" id="btn-clear">Clear All</button>
+        </div>
+      </div>
+    </main>
+
+    <div class="bot-chat">
+      <img src="./asstets/icons/robot.svg" alt="" class="robot-icon" />
     </div>
-  </main>
-
-  <div class="bot-chat">
-    <img src="./asstets/icons/robot.svg" alt="" class="robot-icon" />
-  </div>
-  <script src="./asstets/js/main.js"></script>
-  <script src="./axios/alltask.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-</body>
-
+    <script src="./asstets/js/main.js"></script>
+    <script src="./axios/alltask.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </body>
 </html>
