@@ -58,6 +58,7 @@
 }
 
 .running-task-block .btn-search {
+  position: relative;
   cursor: pointer;
 }
 
@@ -132,8 +133,8 @@
   cursor: pointer;
 }
 
-/* Load more */
-.running-task-block .btn-load {
+/* Clear All */
+.running-task-block .btn-clear {
   display: block;
   width: 150px;
   height: 35px;

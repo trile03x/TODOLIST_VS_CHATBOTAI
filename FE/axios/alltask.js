@@ -1,5 +1,6 @@
 const tokenCheck = window.check();
 const email = localStorage.getItem("emailUser");
+// console.log(email);
 let checkStatus = false;
 function formatDate(dateString) {
     const date = new Date(dateString);
@@ -19,7 +20,7 @@ if (tokenCheck != -1) {
                 taskLevel: priority,
                 taskType: category,
                 status: status,
-                email:email
+                email: email
             });
             checkStatus = true;
             const tasks = response.data;
@@ -77,7 +78,7 @@ if (tokenCheck != -1) {
                 taskLevel: priority,
                 taskType: category,
                 status: status,
-                email:email
+                email: email
             });
             const tasks = response.data;
             // console.log(tasks);
@@ -118,7 +119,8 @@ if (tokenCheck != -1) {
         }
         // delete
         const deleteBtn = document.querySelectorAll(".btn-delete");
-        deleteBtn.forEach(btn => {
+        deleteBtn.forEach(btn=> {
+            
             btn.addEventListener('click', deleteTask)
         })
         const btnUpdate = document.querySelectorAll(".btn-update");
@@ -132,9 +134,10 @@ else {
     window.location.href = "login.html";
 }
 async function deleteTask(event) {
+    event.preventDefault();
     const taskId = event.target.getAttribute('id');
     const response = await axios.delete(`http://localhost:3036/api/v1/task/${taskId}`);
-    if (response.status == 200) {
+    if (response.status === 200) {
         alert("Removed");
         event.target.closest('.task-item').remove();
     }
@@ -152,4 +155,3 @@ async function updateTask(event) {
         alert(error);
     }
 }
-

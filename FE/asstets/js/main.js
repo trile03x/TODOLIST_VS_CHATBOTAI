@@ -14,19 +14,24 @@
 
 const menu = document.querySelector(".navbar__links");
 const menuButton = document.querySelector(".navbar__icons");
-const overlay = document.querySelector("#overlay");
+// const overlay = document.querySelector("#overlay");
 
 menuButton.addEventListener("click", () => {
   menu.classList.toggle("navbar__open");
   menuButton.classList.toggle("open");
-  overlay.classList.toggle("show");
+  // overlay.classList.toggle("show");
 });
 
-overlay.addEventListener("click", () => {
-  menu.classList.toggle("navbar__open");
-  menuButton.classList.toggle("open");
-  overlay.classList.toggle("show");
+// overlay.addEventListener("click", () => {
+//   menu.classList.toggle("navbar__open");
+//   menuButton.classList.toggle("open");
+//   overlay.classList.toggle("show");
+// });
+
+// info user
+const boxUser = document.querySelector(".box-user");
+const infoUser = document.querySelector(".info-user");
+
+boxUser.addEventListener("click", () => {
+  infoUser.classList.toggle("active");
 });
-
-// End Navbar
-

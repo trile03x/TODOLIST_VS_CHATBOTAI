@@ -1,0 +1,19 @@
+.running-task-block .running-task-body > .row {
+  justify-content: space-between;
+}
+
+.running-task-block .btn-search {
+  position: relative;
+}
+
+.running-task-block .search {
+  width: 200px;
+  padding-right: 35px;
+}
+
+.running-task-block .search-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}

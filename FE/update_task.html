@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Embed font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Icon  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
     <!-- reset css -->
     <link rel="stylesheet" href="./asstets/css/reset.css" />
 
@@ -19,94 +24,106 @@
     <link rel="stylesheet" href="./asstets/css/style.css" />
     <link rel="stylesheet" href="./asstets/css/update_task.css" />
     <title>TodoList</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header class="header">
-        <div class="container">
-            <nav class="navbar">
-                <!-- menu button -->
-                <div class="navbar__icons">
-                    <div class="navbar__icon"></div>
-                </div>
-                <!-- search -->
-                <div class="navbar__search">
-                    <input type="text" placeholder="Search" />
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </div>
-                <!-- Right icon -->
-                <div class="navbar__right">
-                    <i class="fa-regular fa-bell"></i>
-                    <i id="moon" class="fa-solid fa-moon"></i>
-                    <i class="fa-solid fa-user"></i>
-                </div>
-            </nav>
-        </div>
+      <div class="container">
+        <nav class="navbar">
+          <!-- menu button -->
+          <div class="navbar__icons">
+            <div class="navbar__icon"></div>
+          </div>
+          <!-- search -->
+          <div class="navbar__search">
+            <input type="text" placeholder="Search" />
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+          <!-- Right icon -->
+          <div class="navbar__right">
+            <i class="fa-regular fa-bell"></i>
+            <i id="moon" class="fa-solid fa-moon"></i>
+            <i class="fa-solid fa-user"></i>
+          </div>
+        </nav>
+      </div>
     </header>
 
     <main class="main">
-        <!-- links -->
-        <ul class="navbar__links">
-            <li class="navbar__link">
-                <i class="fas fa-tachometer-alt"></i>
-                <a href="./index.html">Home</a>
-            </li>
-            <li class="navbar__link">
-                <i class="fa-solid fa-list-check"></i>
-                <a href="./all_task.html">All Tasks</a>
-            </li>
-            <li class="navbar__link">
-                <i class="fa-solid fa-circle-check"></i>
-                <a href="./completed_task.html">Completed Tasks</a>
-            </li>
-            <li class="navbar__link">
-                <i class="fa-solid fa-hourglass-half"></i>
-                <a href="./running_task.html">Running Tasks</a>
-            </li>
-            <li class="navbar__link">
-                <i class="fa-solid fa-circle-plus"></i>
-                <a href="./create_task.html">Add a Task</a>
-            </li>
-        </ul>
-        <!-- Update task -->
-        <div class="update-task">
-            <h1 class="task-title">Update your task</h1>
-            <form action="" class="update-task_block" id="form-update-task">
-                <div class="update-task__input">
-                    <label for="task-name">Task Name</label>
-                    <input type="text" id="task-name" placeholder="Update your task name" />
-                </div>
-                <div class="update-task__input">
-                    <label for="end-date">End Date</label>
-                    <input type="date" id="end-date" />
-                </div>
-                <div class="update-task__input">
-                    <label for="priority">Priority level</label>
-                    <select name="" id="priority">
-                        <option value="1">Low</option>
-                        <option value="2">Medium</option>
-                        <option value="3">High</option>
-                    </select>
-                </div>
-                <div class="update-task__input">
-                    <label for="category">Category</label>
-                    <select name="" id="category">
-                        <option value="1">Work</option>
-                        <option value="2">Study</option>
-                        <option value="3">Housework</option>
-                    </select>
-                </div>
-                <div class="update-task__input">
-                    <label>Task Description</label>
-                    <textarea id="task-desc" cols="30" rows="10" placeholder="Update your task description"></textarea>
-                </div>
-                <input type="submit" value="update to Task" class="update-task__btn" />
-            </form>
-        </div>
+      <!-- links -->
+      <ul class="navbar__links">
+        <li class="navbar__link">
+          <i class="fas fa-tachometer-alt"></i>
+          <a href="./index.html">Home</a>
+        </li>
+        <li class="navbar__link">
+          <i class="fa-solid fa-list-check"></i>
+          <a href="./all_task.html">All Tasks</a>
+        </li>
+        <li class="navbar__link">
+          <i class="fa-solid fa-circle-check"></i>
+          <a href="./completed_task.html">Completed Tasks</a>
+        </li>
+        <li class="navbar__link">
+          <i class="fa-solid fa-hourglass-half"></i>
+          <a href="./running_task.html">Running Tasks</a>
+        </li>
+        <li class="navbar__link">
+          <i class="fa-solid fa-circle-plus"></i>
+          <a href="./create_task.html">Add a Task</a>
+        </li>
+      </ul>
+      <!-- Update task -->
+      <div class="update-task">
+        <h1 class="task-title">Update your task</h1>
+        <form action="" class="update-task_block" id="form-update-task">
+          <div class="update-task__input">
+            <label for="task-name">Task Name</label>
+            <input
+              type="text"
+              id="task-name"
+              placeholder="Update your task name"
+            />
+          </div>
+          <div class="update-task__input">
+            <label for="end-date">End Date</label>
+            <input type="date" id="end-date" />
+          </div>
+          <div class="update-task__input">
+            <label for="priority">Priority level</label>
+            <select name="" id="priority">
+              <option value="1">Low</option>
+              <option value="2">Medium</option>
+              <option value="3">High</option>
+            </select>
+          </div>
+          <div class="update-task__input">
+            <label for="category">Category</label>
+            <select name="" id="category">
+              <option value="1">Work</option>
+              <option value="2">Study</option>
+              <option value="3">Housework</option>
+            </select>
+          </div>
+          <div class="update-task__input">
+            <label>Task Description</label>
+            <textarea
+              id="task-desc"
+              cols="30"
+              rows="10"
+              placeholder="Update your task description"
+            ></textarea>
+          </div>
+          <input
+            type="submit"
+            value="update to Task"
+            class="update-task__btn"
+          />
+        </form>
+      </div>
     </main>
     <script src="./asstets/js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./axios/update_task.js"></script>
-</body>
-
+  </body>
 </html>
