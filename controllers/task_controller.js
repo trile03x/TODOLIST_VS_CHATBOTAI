@@ -38,15 +38,17 @@ const showTasks = async (req, res) => {
     res.send(error);
   }
 };
-const showTaskRun = async (req, res) => {
-  const { status, email, taskTitle } = req.query;
+const showRunorDone = async (req, res) => {
+  let { statusTask, email, taskTitle } = req.query;
+  statusTask = (statusTask === 'true');
   const taskIds = await checkIdTask(email);
   let whereClause = {
     id: {
       [Op.in]: taskIds
     },
-    status : status
+    status: statusTask
   }
+  console.log(taskTitle);
   try {
     if (taskTitle) {
       whereClause.taskTitle = {
@@ -175,6 +177,6 @@ module.exports = {
   showDetailTasks,
   updateTasks,
   deleteTasks,
-  showTaskRun,
+  showRunorDone,
   showDetailTaskByQuery,
 };

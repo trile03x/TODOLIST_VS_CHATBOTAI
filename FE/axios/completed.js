@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     try {
         const response = await axios.get("http://localhost:3036/api/v1/task/RunOrDone", {
             params: {
-                statusTask:false,
+                statusTask: true,
                 email
             }
         });
@@ -42,7 +42,7 @@ document.querySelector(".search-icon").addEventListener("click", async (event) =
                 params: {
                     taskTitle: taskName,
                     email,
-                    statusTask: false
+                    status: true
                 }
             }
         );

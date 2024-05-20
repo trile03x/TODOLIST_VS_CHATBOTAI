@@ -9,6 +9,11 @@ function formatDate(dateString) {
 }
 if (tokenCheck != -1) {
   document.addEventListener("DOMContentLoaded", async () => {
+    const res = await axios.post("http://localhost:3036/api/v1/users/show", {
+      email
+    })
+    const data = res.data;
+    localStorage.setItem("userCurrent", data.name)
     try {
       const response = await axios.get("http://localhost:3036/api/v1/task/show", {
         params: { email }
@@ -173,3 +178,5 @@ else {
   alert("Bạn chưa đăng nhập");
   window.location.href = "login.html";
 }
+let nameUser = localStorage.getItem("userCurrent");
+document.querySelector(".info-name").textContent = nameUser;
