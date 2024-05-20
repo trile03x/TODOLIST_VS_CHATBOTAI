@@ -93,3 +93,5 @@ function createTaskItem(task) {
 
     return taskItem;
 }
+let nameUser = localStorage.getItem("userCurrent");
+document.querySelector(".info-name").textContent = nameUser;

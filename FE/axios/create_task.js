@@ -53,3 +53,5 @@ else {
     alert("Bạn chưa đăng nhập");
     window.location.href = "login.html";
 }
+let nameUser = localStorage.getItem("userCurrent");
+document.querySelector(".info-name").textContent = nameUser;

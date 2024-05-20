@@ -49,3 +49,5 @@ document.getElementById("form-update-task").addEventListener("submit", async fun
       alert(error);
     }
   });
+  let nameUser = localStorage.getItem("userCurrent");
+  document.querySelector(".info-name").textContent = nameUser;

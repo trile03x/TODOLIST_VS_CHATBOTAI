@@ -155,3 +155,5 @@ async function updateTask(event) {
         alert(error);
     }
 }
+let nameUser = localStorage.getItem("userCurrent");
+document.querySelector(".info-name").textContent = nameUser;

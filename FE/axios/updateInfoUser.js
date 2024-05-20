@@ -35,6 +35,7 @@ document.getElementById("form-submit").addEventListener("click", async (event) =
                 if (res.status === 200) {
                     emailCheck = localStorage.setItem("emailUser",email);
                     alert("Đã cập nhật thông tin thành công");
+                    localStorage.getItem("userCurrent",name);
                     window.history.back();
                 }
             }catch(error){
@@ -44,3 +45,4 @@ document.getElementById("form-submit").addEventListener("click", async (event) =
     }
     
 })
+
