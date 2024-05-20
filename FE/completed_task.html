@@ -44,7 +44,20 @@
           <div class="navbar__right">
             <i class="fa-regular fa-bell"></i>
             <i id="moon" class="fa-solid fa-moon"></i>
-            <i class="fa-solid fa-user"></i>
+            <div class="box-user">
+              <i class="fa-solid fa-user"></i>
+              <div class="info-user">
+                <div class="info-avatar">
+                  <img src="./asstets/icons/uifaces-human-image.jpg" alt="" class="img-user" />
+                  <p class="info-name">Lê Văn Tri</p>
+                </div>
+                <div class="infor-detail">
+                  <button class="change-info">Thay đổi thông tin</button>
+                  <button class="btn-logout">Logout </button>
+                </div>
+              </div>
+  
+            </div>
           </div>
         </nav>
       </div>
@@ -78,18 +91,8 @@
         <div class="running-task-heading">Completed Tasks</div>
         <div class="running-task-body">
           <div class="row">
-            <div class="group-btn">
-              <button class="btn btn-category">
-                <span>By category</span>
-                <img
-                  src="./asstets/icons/filter-icon.svg"
-                  alt=""
-                  style="width: 11px; height: 14px"
-                />
-              </button>
-            </div>
             <div class="btn-search">
-              <input type="text" class="search" placeholder="Search by name" />
+              <input type="text" id ="task-name" class="search" placeholder="Search by name"/>
               <img
                 src="./asstets/icons/search-icon.svg"
                 alt=""

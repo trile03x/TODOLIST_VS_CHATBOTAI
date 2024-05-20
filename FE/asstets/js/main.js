@@ -22,11 +22,7 @@ menuButton.addEventListener("click", () => {
   // overlay.classList.toggle("show");
 });
 
-// overlay.addEventListener("click", () => {
-//   menu.classList.toggle("navbar__open");
-//   menuButton.classList.toggle("open");
-//   overlay.classList.toggle("show");
-// });
+
 
 // info user
 const boxUser = document.querySelector(".box-user");
@@ -35,3 +31,9 @@ const infoUser = document.querySelector(".info-user");
 boxUser.addEventListener("click", () => {
   infoUser.classList.toggle("active");
 });
+
+const changePassword = document.querySelector(".change-info");
+changePassword.addEventListener("click", (e) => {
+  window.location.href = "change-pass.html"
+})
+

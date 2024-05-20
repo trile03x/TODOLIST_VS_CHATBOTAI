@@ -1,5 +1,5 @@
 .running-task-block .running-task-body > .row {
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .running-task-block .btn-search {
@@ -7,7 +7,7 @@
 }
 
 .running-task-block .search {
-  width: 200px;
+  width: 300px;
   padding-right: 35px;
 }
 
