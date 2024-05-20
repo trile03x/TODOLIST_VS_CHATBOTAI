@@ -74,7 +74,7 @@
         <div class="running-task-body">
           <div class="row">
             <div class="btn-search">
-              <input type="text" class="search" placeholder="Search by name"/>
+              <input type="text" id ="task-name" class="search" placeholder="Search by name"/>
               <img
                 src="./asstets/icons/search-icon.svg"
                 alt=""
@@ -294,9 +294,6 @@
               </div>
             </div>
           </div>
-
-          <!-- Load more -->
-          <button class="btn-load">Load more</button>
         </div>
        
     </div>
@@ -306,7 +303,11 @@
   <div class="bot-chat">
     <img src="./asstets/icons/robot.svg" alt="" class="robot-icon" />
   </div>
+  <script src ="./axios/checkAuth/auth.js"></script>
   <script src="./asstets/js/main.js"></script>
+  <script  src="./axios/running.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
 </body>
 
 </html>

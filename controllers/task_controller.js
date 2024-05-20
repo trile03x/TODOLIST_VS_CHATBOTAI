@@ -28,28 +28,46 @@ const showTasks = async (req, res) => {
     id: {
       [Op.in]: taskIds
     }
-  };
-  const { taskTitle } = req.query;
+  }
   try {
-    if (taskTitle) {
-      const task = await Tasks.findOne({
-        where: {
-          taskTitle: {
-            [Op.like]: `%${taskTitle}%`,
-          },
-        },
-      });
-      res.send(task);
-    } else {
-      const listStation = await Tasks.findAll({
-        where: whereClause,
-      });
-      res.send(listStation);
-    }
+    const taskList = await Tasks.findAll({
+      where: whereClause,
+    });
+    res.send(taskList);
   } catch (error) {
     res.send(error);
   }
 };
+const showTaskRun = async (req, res) => {
+  const { status, email, taskTitle } = req.query;
+  const taskIds = await checkIdTask(email);
+  let whereClause = {
+    id: {
+      [Op.in]: taskIds
+    },
+    status : status
+  }
+  try {
+    if (taskTitle) {
+      whereClause.taskTitle = {
+        [Op.like]: `%${taskTitle}%`
+      };
+      const taskList = await Tasks.findAll({
+        where: whereClause,
+      });
+      res.send(taskList);
+    } else {
+      const taskList = await Tasks.findAll({
+        where: whereClause,
+      });
+      res.send(taskList);
+    }
+
+  } catch (error) {
+    res.send(error);
+  }
+
+}
 const showDetailTasks = async (req, res) => {
   try {
     const { id } = req.params;
@@ -118,7 +136,7 @@ const showDetailTaskByQuery = async (req, res) => {
 const updateTasks = async (req, res) => {
   try {
     const { id } = req.params;
-    const data  = req.body;
+    const data = req.body;
     await Tasks.update(data, {
       where: {
         id,
@@ -157,5 +175,6 @@ module.exports = {
   showDetailTasks,
   updateTasks,
   deleteTasks,
+  showTaskRun,
   showDetailTaskByQuery,
 };
